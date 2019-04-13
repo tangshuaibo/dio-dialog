@@ -1,0 +1,198 @@
+/* 对话框 */
+.dio-overlay *,
+.dio-dialog * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.dio-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, .4);
+    opacity: 0;
+    z-index: 1000;
+}
+.dio-overlay.invisible {
+    background-color: rgba(0, 0, 0, 0);
+}
+.dio-overlay.show {
+    display: block;
+    animation: showOverlay .3s forwards;
+}
+.dio-overlay.hide {
+    animation: hideOverlay .3s forwards;
+}
+.dio-dialog {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    width: 92%;
+    max-height: 90%;
+    background-color: white;
+    border-radius: 2px;
+    box-shadow: 0 11px 15px -7px rgba(0, 0, 0, .2),
+                0 24px 38px 3px rgba(0, 0, 0, .14),
+                0 9px 46px 8px rgba(0, 0, 0, .12);
+    transform: translateY(-50%);
+    opacity: 0;
+    z-index: 1001;
+}
+.dio-dialog.show {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-orient: vertical; 
+    -webkit-flex-direction: column;
+    flex-direction: column;
+    animation: showDialog .3s forwards;
+}
+.dio-dialog.hide {
+    animation: hideDialog .3s forwards;
+}
+.dio-dialog>* {
+    word-wrap: break-word;
+    word-break: break-all;
+}
+.dio-dialog-title {
+    padding: 24px 24px 0;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 24px;
+}
+.dio-dialog-content {
+    padding: 24px;
+    font-size: 15px;
+    line-height: 1.5;
+    color: rgba(0, 0, 0, .7);
+    overflow: auto;
+}
+.dio-dialog-title+.dio-dialog-content {
+    padding-top: 20px;
+}
+.dio-dialog-actions {
+    padding: 8px;
+    font-size: 0;
+    text-align: right;
+}
+.dio-dialog-actions:not(.stacked)>*+* {
+    margin-left: 8px;
+}
+.dio-dialog-btn {
+    display: inline-block;
+    vertical-align: middle;
+    padding: 0 16px;
+    max-width: 100%;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 36px;
+    text-align: center;
+    white-space: nowrap;
+    text-decoration: none;
+    letter-spacing: .04em;
+    text-transform: uppercase;
+    color: rgb(233, 30, 99);
+    border-radius: 2px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    cursor: pointer;
+}
+.dio-dialog-btn.bold {
+    font-weight: 700;
+}
+.dio-dialog-btn:hover {
+    background-color: rgba(0, 0, 0, .1);
+}
+.dio-dialog-actions.stacked {
+    padding: 8px 0;
+}
+.dio-dialog-actions.stacked>.dio-dialog-btn {
+    display: block;
+    line-height: 48px;
+    text-align: right;
+    border-radius: unset;
+}
+@keyframes showOverlay {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+@keyframes showDialog {
+    from {
+        opacity: 0;
+        transform: translateY(-50%) scale(.9);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(-50%) scale(1);
+    }
+}
+@keyframes hideOverlay {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+@keyframes hideDialog {
+    from {
+        opacity: 1;
+        transform: translateY(-50%) scale(1);
+    }
+    to {
+        opacity: 0;
+        transform: translateY(-50%) scale(.9);
+    }
+}
+/* 文本框 */
+.dio-textfield-label {
+    display: block;
+    font-size: 16px;
+    line-height: 1.5;
+    word-wrap: break-word;
+    word-break: break-all;
+    color: rgba(0, 0, 0, .54);
+    transition: all .2s;
+}
+.dio-textfield-input {
+    display: block;
+    padding: 8px 0;
+    width: 100%;
+    font-size: 16px;
+    line-height: 20px;
+    white-space: pre;
+    color: rgba(0, 0, 0, .87);
+    border: none;
+    outline: none;
+    border-bottom: 1px solid rgba(0, 0, 0, .42);
+    transition: all .2s;
+    cursor: pointer;
+}
+.dio-textfield-input * {
+    line-height: 20px;
+}
+.dio-textfield-input:hover {
+    border-bottom: 1px solid rgba(0, 0, 0, .87);
+    box-shadow: 0 1px 0 0 rgba(0, 0, 0, .87);
+}
+div.dio-textfield-input:empty:before {
+    content: attr(placeholder);
+    color: rgba(0, 0, 0, .54);
+}
+.dio-textfield.focus>.dio-textfield-label {
+    color: rgba(197, 17, 98, .87);
+}
+.dio-textfield.focus>.dio-textfield-input {
+    border-bottom: 1px solid rgba(197, 17, 98, .87);
+    box-shadow: 0 1px 0 0 rgba(197, 17, 98, .87);
+}

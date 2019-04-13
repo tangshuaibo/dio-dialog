@@ -1,0 +1,29 @@
+* {
+    margin: 0;
+    padding: 0;
+    line-height: 1;
+}
+.btn-group {
+    padding: 16px;
+}
+.btn-group>*+.btn-block {
+    margin-top: 16px;
+}
+.btn-block {
+    display: block;
+    position: relative;
+    width: 100%;
+    font-size: 16px;
+    line-height: 2;
+    text-align: center;
+    color: white;
+    background-color: rgb(233, 30, 99);
+    border: none;
+    border-radius: 4px;
+    outline: none;
+    transition: all .2s;
+    cursor: pointer;
+}
+.btn-block:hover {
+    background-color: rgb(33, 150, 243);
+}
