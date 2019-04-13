@@ -18,7 +18,7 @@
     <link rel="stylesheet" href="path/to/dio-alert.min.css">
     <script src="path/to/dio-alert.min.js"></script>
 
-[_回到顶部_](#)
+[_回到顶部_](#伪造的MD风格对话框)
 
 #### 自定义对话框
 
@@ -97,7 +97,7 @@ var instDialog = Dio.dialog(options);
 `close` | `boolean` | `true` | （可选）点击按钮后是否关闭对话框。
 `onClick` | `function` | | （可选）点击按钮的回调函数。
 
-[_回到顶部_](#)
+[_回到顶部_](#伪造的MD风格对话框)
 
 #### 警告框
 
@@ -132,7 +132,7 @@ var instAlert = Dio.alert(options);
 `confirmText` | `string` | `确定` | （可选）确认按钮的文本。
 `onConfirm` | `function` | | （可选）点击确认按钮的回调。
 
-[_回到顶部_](#)
+[_回到顶部_](#伪造的MD风格对话框)
 
 #### 确认框
 
@@ -173,7 +173,7 @@ var instConfirm = Dio.confirm(options);
 `onCancel` | `function` | | （可选）点击取消按钮的回调。
 `onConfirm` | `function` | | （可选）点击确认按钮的回调。
 
-[_回到顶部_](#)
+[_回到顶部_](#伪造的MD风格对话框)
 
 #### 输入框
 
@@ -222,4 +222,4 @@ var instPrompt = Dio.prompt(options);
 `onCancel` | `function` | | （可选）点击取消按钮的回调。参数是文本框的值。
 `onConfirm` | `function` | | （可选）点击确认按钮的回调。参数是文本框的值。
 
-[_回到顶部_](#)
+[_回到顶部_](#伪造的MD风格对话框)
