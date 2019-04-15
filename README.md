@@ -15,8 +15,10 @@
 
 #### 引入文件
 
-    <link rel="stylesheet" href="path/to/dio-alert.min.css">
-    <script src="path/to/dio-alert.min.js"></script>
+```html
+<link rel="stylesheet" href="path/to/dio-alert.min.css">
+<script src="path/to/dio-alert.min.js"></script>
+```
 
 [_回到顶部_](#伪造的MD风格对话框)
 
